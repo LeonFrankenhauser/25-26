@@ -1,0 +1,140 @@
+{"type":["init_ps"],"time":["2025-10-28 15:18:10"],"user":["Leon Frankenhauser"],"umph":[1761661090.7997],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:18:10"],"user":["Leon Frankenhauser"],"umph":[1761661090.8535],"ok":[true],"chunk":[1],"ex":[1],"e.ind":[0],"code":["library(tidyverse)\nlibrary(pander)\nlibrary(sf)\nlibrary(gganimate)\nlibrary(ggrepel)\nlibrary(skimr)\nlibrary(RColorBrewer)"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:18:11"],"user":["Leon Frankenhauser"],"umph":[1761661091.0486],"ok":[true],"chunk":[2],"ex":[1],"e.ind":[0],"code":["eu_makro <- read_csv(\"C:/Users/Jonas/OneDrive/Dokumente/GitHub/25-26/problem-sets/ps3/data/EU_Makro.csv\")\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:18:11"],"user":["Leon Frankenhauser"],"umph":[1761661091.0622],"ok":[false],"chunk":[3],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to ueberblick in chunk 1_b."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:19:53"],"user":["Leon Frankenhauser"],"umph":[1761661193.8587],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:19:54"],"user":["Leon Frankenhauser"],"umph":[1761661194.1857],"ok":[true],"chunk":[3],"ex":[1],"e.ind":[0],"code":["\nueberblick<- skim(eu_makro)\nueberblick\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:19:54"],"user":["Leon Frankenhauser"],"umph":[1761661194.2964],"ok":[true],"chunk":[4],"ex":[1],"e.ind":[0],"code":["panderOptions('knitr.auto.asis', FALSE)\nueberblick |> pander(style=\"rmarkdown\") "],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:19:54"],"user":["Leon Frankenhauser"],"umph":[1761661194.3099],"ok":[false],"chunk":[5],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c_2."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:20:30"],"user":["Leon Frankenhauser"],"umph":[1761661230.6895],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:20:30"],"user":["Leon Frankenhauser"],"umph":[1761661230.7065],"ok":[false],"chunk":[7],"ex":[1],"e.ind":[1],"code":["#deskriptives <- eu_makro |>\n#  group_by(___) |>\n#  summarize(Mittel = round(___(debt_share_country, na.rm=TRUE),2),\n#            SD = round(___(debt_share_country, na.rm=TRUE),2),\n#            Min = round(___(debt_share_country, na.rm=TRUE),2),\n#            Median = round(___(debt_share_country, na.rm=TRUE),2),\n#            Max = round(___(debt_share_country, na.rm=TRUE),2)) |>\n#  arrange(___(___))\n\n#deskriptives\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to deskriptives in chunk 1_d."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:21:25"],"user":["Leon Frankenhauser"],"umph":[1761661285.1004],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:21:25"],"user":["Leon Frankenhauser"],"umph":[1761661285.1183],"ok":[false],"chunk":[5],"ex":[1],"e.ind":[1],"code":["1\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c_2."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:21:37"],"user":["Leon Frankenhauser"],"umph":[1761661297.4894],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:21:37"],"user":["Leon Frankenhauser"],"umph":[1761661297.5046],"ok":[true],"chunk":[5],"ex":[1],"e.ind":[0],"code":["2\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:21:37"],"user":["Leon Frankenhauser"],"umph":[1761661297.5159],"ok":[false],"chunk":[6],"ex":[1],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c_3."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:24:13"],"user":["Leon Frankenhauser"],"umph":[1761661453.8298],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:24:13"],"user":["Leon Frankenhauser"],"umph":[1761661453.8557],"ok":[false],"chunk":[6],"ex":[1],"e.ind":[1],"code":["1\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c_3."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:24:23"],"user":["Leon Frankenhauser"],"umph":[1761661463.1127],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:24:23"],"user":["Leon Frankenhauser"],"umph":[1761661463.1289],"ok":[false],"chunk":[6],"ex":[1],"e.ind":[1],"code":["3\n# enter your code here ...\n"],"message":["\nYou have not yet entered all correct commands in chunk 1_c_3."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:24:33"],"user":["Leon Frankenhauser"],"umph":[1761661473.3113],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:24:33"],"user":["Leon Frankenhauser"],"umph":[1761661473.3267],"ok":[true],"chunk":[6],"ex":[1],"e.ind":[0],"code":["2\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:24:33"],"user":["Leon Frankenhauser"],"umph":[1761661473.3407],"ok":[false],"chunk":[7],"ex":[1],"e.ind":[1],"code":["#deskriptives <- eu_makro |>\n#  group_by(___) |>\n#  summarize(Mittel = round(___(debt_share_country, na.rm=TRUE),2),\n#            SD = round(___(debt_share_country, na.rm=TRUE),2),\n#            Min = round(___(debt_share_country, na.rm=TRUE),2),\n#            Median = round(___(debt_share_country, na.rm=TRUE),2),\n#            Max = round(___(debt_share_country, na.rm=TRUE),2)) |>\n#  arrange(___(___))\n\n#deskriptives\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to deskriptives in chunk 1_d."]}
+,
+{"type":["hint"],"time":["2025-10-28 15:25:58"],"user":["Leon Frankenhauser"],"umph":[1761661558.387],"ok":[true],"chunk":[7],"ex":[1],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:28:35"],"user":["Leon Frankenhauser"],"umph":[1761661715.7062],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:28:35"],"user":["Leon Frankenhauser"],"umph":[1761661715.7758],"ok":[true],"chunk":[7],"ex":[1],"e.ind":[0],"code":["deskriptives <- eu_makro |>\n  group_by(country) |>\n  summarize(Mittel = round(mean(debt_share_country, na.rm=TRUE),2),\n            SD = round(sd(debt_share_country, na.rm=TRUE),2),\n            Min = round(min(debt_share_country, na.rm=TRUE),2),\n            Median = round(median(debt_share_country, na.rm=TRUE),2),\n            Max = round(max(debt_share_country, na.rm=TRUE),2)) |>\n  arrange(desc(Median))\n\ndeskriptives\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:28:35"],"user":["Leon Frankenhauser"],"umph":[1761661715.888],"ok":[true],"chunk":[8],"ex":[2],"e.ind":[0],"code":["eu_makro <- read_csv(\"./data/EU_Makro.csv\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:28:35"],"user":["Leon Frankenhauser"],"umph":[1761661715.9071],"ok":[false],"chunk":[9],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to deutschland in chunk 2_a."]}
+,
+{"type":["hint"],"time":["2025-10-28 15:30:18"],"user":["Leon Frankenhauser"],"umph":[1761661818.5144],"ok":[true],"chunk":[9],"ex":[2],"e.ind":[1]}
+,
+{"type":["hint"],"time":["2025-10-28 15:31:17"],"user":["Leon Frankenhauser"],"umph":[1761661877.2727],"ok":[true],"chunk":[9],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:32:39"],"user":["Leon Frankenhauser"],"umph":[1761661959.3245],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:32:39"],"user":["Leon Frankenhauser"],"umph":[1761661959.345],"ok":[false],"chunk":[9],"ex":[2],"e.ind":[1],"code":["\ndeutschland<- eu_makro |>\n  filter(country == \"deutschland\")\n"],"message":["\nYou have not made a correct assignment to deutschland in chunk 2_a."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:33:43"],"user":["Leon Frankenhauser"],"umph":[1761662023.7528],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:33:43"],"user":["Leon Frankenhauser"],"umph":[1761662023.7875],"ok":[false],"chunk":[9],"ex":[2],"e.ind":[1],"code":["\ndeutschland<- eu_makro |>\n  filter(country == \"deutschland\")\n"],"message":["\nYou have not made a correct assignment to deutschland in chunk 2_a."]}
+,
+{"type":["hint"],"time":["2025-10-28 15:33:53"],"user":["Leon Frankenhauser"],"umph":[1761662033.4943],"ok":[true],"chunk":[9],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:34:16"],"user":["Leon Frankenhauser"],"umph":[1761662056.2621],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:34:16"],"user":["Leon Frankenhauser"],"umph":[1761662056.2795],"ok":[true],"chunk":[9],"ex":[2],"e.ind":[0],"code":["\ndeutschland<- eu_makro |>\n  filter(country == \"Germany\")\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:34:16"],"user":["Leon Frankenhauser"],"umph":[1761662056.2968],"ok":[false],"chunk":[10],"ex":[2],"e.ind":[1],"code":["#g1 <- ___ |>\n#  ggplot() + geom_point(___(x = ___, y = ___))\n\n#g1\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to g1 in chunk 2_b."]}
+,
+{"type":["hint"],"time":["2025-10-28 15:36:05"],"user":["Leon Frankenhauser"],"umph":[1761662165.2656],"ok":[true],"chunk":[10],"ex":[2],"e.ind":[1]}
+,
+{"type":["hint"],"time":["2025-10-28 15:41:31"],"user":["Leon Frankenhauser"],"umph":[1761662491.7272],"ok":[true],"chunk":[10],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:44:21"],"user":["Leon Frankenhauser"],"umph":[1761662661.3597],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:44:21"],"user":["Leon Frankenhauser"],"umph":[1761662661.4375],"ok":[false],"chunk":[10],"ex":[2],"e.ind":[1],"code":["g1 <- ggplot(deutschland) |>\n  geom_point(aes(x = years, y = gdp))\n\ng1\n\n \n"],"message":["\nYou have not made a correct assignment to g1 in chunk 2_b."]}
+,
+{"type":["hint"],"time":["2025-10-28 15:44:28"],"user":["Leon Frankenhauser"],"umph":[1761662668.7918],"ok":[true],"chunk":[10],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:47:18"],"user":["Leon Frankenhauser"],"umph":[1761662838.5037],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:47:18"],"user":["Leon Frankenhauser"],"umph":[1761662838.6845],"ok":[true],"chunk":[10],"ex":[2],"e.ind":[0],"code":["g1 <- ggplot(deutschland) +\n  geom_point(aes(x = year, y = gdp))\n\ng1\n\n \n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:47:18"],"user":["Leon Frankenhauser"],"umph":[1761662838.6987],"ok":[false],"chunk":[11],"ex":[2],"e.ind":[1],"code":["\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to g2 in chunk 2_c."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:56:06"],"user":["Leon Frankenhauser"],"umph":[1761663366.9948],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:56:07"],"user":["Leon Frankenhauser"],"umph":[1761663367.3524],"ok":[true],"chunk":[11],"ex":[2],"e.ind":[0],"code":["\ng2<- ggplot(deutschland) +\n  geom_point(aes(x = year, y = gdp), color = \"steelblue\") +\n  geom_line(aes(x = year, y = gov_debt), color =\"firebrick\") +\n  labs( \n    title = \"Bruttoinlandsprodukt und Schulden Deutschlands über die Jahre\",\n    x = \"Jahr\",\n    y = \"Wert (in Mrd. EUR)\",\n    color = \"Variable\"\n    ) +\n  theme_minimal()\ng2\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:56:07"],"user":["Leon Frankenhauser"],"umph":[1761663367.372],"ok":[false],"chunk":[12],"ex":[2],"e.ind":[1],"code":["# g3 <- ____ |>\n#   ggplot() + \n#   geom_line(aes(x = ____, y = ____, group=____, colour=____))\n#\n#g3\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to g3 in chunk 2_d."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 15:59:01"],"user":["Leon Frankenhauser"],"umph":[1761663541.4243],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 15:59:01"],"user":["Leon Frankenhauser"],"umph":[1761663541.4497],"ok":[false],"chunk":[13],"ex":[2],"e.ind":[1],"code":["#eu_analyse <- eu_makro |>\n#  filter(___) |>\n#  mutate( Laender = case_when(\n#    country == \"___\" ~ \"Deutschland\",\n#    country == \"___\" ~ \"Italien\",\n#    TRUE ~ \"___\"))\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to eu_analyse in chunk 2_e."]}
+,
+{"type":["hint"],"time":["2025-10-28 16:00:12"],"user":["Leon Frankenhauser"],"umph":[1761663612.76],"ok":[true],"chunk":[13],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 16:03:03"],"user":["Leon Frankenhauser"],"umph":[1761663783.1085],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:03:03"],"user":["Leon Frankenhauser"],"umph":[1761663783.1316],"ok":[false],"chunk":[12],"ex":[2],"e.ind":[1],"code":[" g3 <- ggplot(country) |>\n   ggplot() + \n   geom_line(aes(x = .PH_.__, y = .PH_.__, group=.PH_.__, colour=.PH_.__))\n\ng3\n\n# enter your code here ...\n"],"message":["\nYou have not made a correct assignment to g3 in chunk 2_d."]}
+,
+{"type":["hint"],"time":["2025-10-28 16:05:33"],"user":["Leon Frankenhauser"],"umph":[1761663933.1347],"ok":[true],"chunk":[12],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 16:12:58"],"user":["Leon Frankenhauser"],"umph":[1761664378.6896],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:12:58"],"user":["Leon Frankenhauser"],"umph":[1761664378.8737],"ok":[false],"chunk":[12],"ex":[2],"e.ind":[1],"code":[" g3 <- ggplot(eu_makro) |>\n   ggplot() + \n   geom_line(aes(x = year, y = debt_share_country, group=country, colour=country))\n\ng3\n\n# enter your code here ...\n"],"message":["\nYou have not made a correct assignment to g3 in chunk 2_d."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 16:17:23"],"user":["Leon Frankenhauser"],"umph":[1761664643.5812],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:17:23"],"user":["Leon Frankenhauser"],"umph":[1761664643.6541],"ok":[false],"chunk":[12],"ex":[2],"e.ind":[1],"code":[" g3 <- ggplot(eu_makro) |>\n   geom_line(aes(x = year, y = debt_share_country, group=country, colour=country))\n\ng3\n\n# enter your code here ...\n"],"message":["\nYou have not made a correct assignment to g3 in chunk 2_d."]}
+,
+{"type":["check_ps"],"time":["2025-10-28 16:17:57"],"user":["Leon Frankenhauser"],"umph":[1761664677.1086],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:17:57"],"user":["Leon Frankenhauser"],"umph":[1761664677.4007],"ok":[true],"chunk":[12],"ex":[2],"e.ind":[0],"code":[" g3 <- ggplot(eu_makro) +\n   geom_line(aes(x = year, y = debt_share_country, group=country, colour=country))\n\ng3\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:17:57"],"user":["Leon Frankenhauser"],"umph":[1761664677.4193],"ok":[true],"chunk":[13],"ex":[2],"e.ind":[0],"code":["eu_analyse <- eu_makro |>\n  filter(year >= 1995) |>\n  mutate( Laender = case_when(\n    country == \"Germany\" ~ \"Deutschland\",\n    country == \"Italy\" ~ \"Italien\",\n    TRUE ~ \"Andere\"))\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:17:57"],"user":["Leon Frankenhauser"],"umph":[1761664677.6783],"ok":[true],"chunk":[14],"ex":[2],"e.ind":[0],"code":["g4 <- eu_analyse |>\n  ggplot() + \n  geom_line(aes(x = year, y = debt_share_country, group = Laender, colour = Laender))\n\ng4\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:17:57"],"user":["Leon Frankenhauser"],"umph":[1761664677.9008],"ok":[true],"chunk":[15],"ex":[2],"e.ind":[0],"code":["g5 <- g4 + \n  ylab(\"Schuldenquote\") + \n  xlab(\"Jahr\") +\n  scale_colour_manual(name = \"Andere\", \n                      values = c(\"grey\", \"springgreen4\", \"blue\"))\n\ng5\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:17:57"],"user":["Leon Frankenhauser"],"umph":[1761664677.9137],"ok":[false],"chunk":[16],"ex":[2],"e.ind":[1],"code":["#final <- g5 +\n#  ___(\"Schuldenquote einzelner EU-Laender von 1995 - 2023\") +\n#  ___(___=0.60, ___ = \"red\")\n\n#final\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to final in chunk 2_h."]}
+,
+{"type":["hint"],"time":["2025-10-28 16:22:41"],"user":["Leon Frankenhauser"],"umph":[1761664961.119],"ok":[true],"chunk":[16],"ex":[2],"e.ind":[1]}
+,
+{"type":["check_ps"],"time":["2025-10-28 16:39:09"],"user":["Leon Frankenhauser"],"umph":[1761665949.2111],"ok":[true]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:39:09"],"user":["Leon Frankenhauser"],"umph":[1761665949.4466],"ok":[true],"chunk":[16],"ex":[2],"e.ind":[0],"code":["final <- g5 +\n  ggtitle(\"Schuldenquote einzelner EU-Laender von 1995 - 2023\") +\n  geom_hline(yintercept =0.60, color = \"red\")\n\nfinal\n\n# enter your code here ...\n"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:39:09"],"user":["Leon Frankenhauser"],"umph":[1761665949.7337],"ok":[true],"chunk":[17],"ex":[2],"e.ind":[0],"code":["final +\n  theme_bw() +\n  guides(color = FALSE) +\n  geom_text_repel(aes(x = year, y = debt_share_country, label = Laender),\n                  data          = filter(eu_analyse |> filter(Laender!=\"Andere\", year==last(year))),\n                  size          = 4,\n                  box.padding   = 1.5,\n                  point.padding = 0.5,\n                  force         = 100,\n                  segment.size  = 0.2,\n                  segment.color = \"grey50\",\n                  direction     = \"x\")"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:39:10"],"user":["Leon Frankenhauser"],"umph":[1761665950.001],"ok":[true],"chunk":[18],"ex":[3],"e.ind":[0],"code":["eu_makro <- read_csv(\"./data/EU_Makro.csv\")\neu_analyse <- eu_makro |>\n  filter(year>=1995) |>\n  mutate( Laender = case_when(\n    country == \"Germany\" ~ \"Deutschland\",\n    country == \"Italy\" ~ \"Italien\",\n    TRUE ~ \"Andere\"))"],"message":[""]}
+,
+{"type":["check_chunk"],"time":["2025-10-28 16:39:10"],"user":["Leon Frankenhauser"],"umph":[1761665950.013],"ok":[false],"chunk":[19],"ex":[3],"e.ind":[1],"code":["#eu_2005 <- eu_makro |> \n#  filter(___) |>\n#  ggplot(aes(___)) + \n#  ___\n\n#eu_2005\n\n# enter your code here ...\n"],"message":["\nYou have not yet made an assignment to eu_2005 in chunk 3_a."]}
+,

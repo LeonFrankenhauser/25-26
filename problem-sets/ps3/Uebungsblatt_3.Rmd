@@ -1,7 +1,7 @@
 
 ```{r 'check_ps', include=FALSE}
 
-user.name = 'ENTER A USER NAME HERE'
+user.name = 'Leon Frankenhauser'
 ```
 
 # RTutor Uebungsblatt 3 - Projektkurs
@@ -56,7 +56,7 @@ library(RColorBrewer)
 a) Im ersten Schritt laden wir die zur Verfuegung stehenden Daten. Laden Sie die im Unterordner "Daten" bereitgestellten Datei `EU_Makro.csv` in R ein. Ergaenzen Sie hierfuer unten stehende Code-Zeile.
 
 ```{r "1_a"}
-____ <- read_csv("____")
+eu_makro <- read_csv("C:/Users/Jonas/OneDrive/Dokumente/GitHub/25-26/problem-sets/ps3/data/EU_Makro.csv")
 
 # enter your code here ...
 
@@ -68,7 +68,8 @@ b) Erstellen Sie hierfuer eine Tabelle, welche alle Variablen von `eu_makro` ent
 
 ```{r "1_b"}
 
-# enter your code here ...
+ueberblick<- skim(eu_makro)
+ueberblick
 
 ```
 
@@ -90,7 +91,7 @@ Wie viele individuelle Laender haben wir in unserem Datensatz?
 
 Geben Sie hier die Ziffer Ihrer Antwort ein und fuehren Sie die Codezeile aus:
 ```{r "1_c_2",optional=TRUE}
-
+2
 # enter your code here ...
 
 ```
@@ -104,7 +105,7 @@ Die Groesse der Laender ist recht unterschiedlich. Wie viele Einwohner hat das k
 
 Geben Sie hier die Ziffer Ihrer Antwort ein und fuehren Sie die Codezeile aus:
 ```{r "1_c_3",optional=TRUE}
-
+2
 # enter your code here ...
 
 ```
@@ -114,16 +115,16 @@ Dieser Ueberblick ermoeglicht uns generelle Fragestellungen mit dem Datensatz zu
 d) Mit `summarize` koennen Sie eine Tabelle aller EU-Laender erstellen und von der Schuldenquote (`debt_share_country`) jedes Landes den Mittelwert (Mittel), die Standardabweichung (SD), das Minimum (Min), Median (Median) und Maximum (Max) ausgeben (in Klammern steht der Name wie Sie die Variable nennen sollen). Runden Sie alle Werte auf zwei Nachkommastellen. Achten Sie darauf, dass `NAs` nicht in ihre Berechnungen aufgenommen werden. Nutzen Sie den Datensatz `eu_makro` und gruppieren Sie ihre Daten nach Laendern. Sortieren Sie ihre deskriptive Tabelle absteigend nach dem Median der Schuldenquote. Speichern Sie ihre Daten in `deskriptives` ab und geben Sie anschliessend `deskriptives` aus.
 
 ```{r "1_d"}
-#deskriptives <- eu_makro |>
-#  group_by(___) |>
-#  summarize(Mittel = round(___(debt_share_country, na.rm=TRUE),2),
-#            SD = round(___(debt_share_country, na.rm=TRUE),2),
-#            Min = round(___(debt_share_country, na.rm=TRUE),2),
-#            Median = round(___(debt_share_country, na.rm=TRUE),2),
-#            Max = round(___(debt_share_country, na.rm=TRUE),2)) |>
-#  arrange(___(___))
+deskriptives <- eu_makro |>
+  group_by(country) |>
+  summarize(Mittel = round(mean(debt_share_country, na.rm=TRUE),2),
+            SD = round(sd(debt_share_country, na.rm=TRUE),2),
+            Min = round(min(debt_share_country, na.rm=TRUE),2),
+            Median = round(median(debt_share_country, na.rm=TRUE),2),
+            Max = round(max(debt_share_country, na.rm=TRUE),2)) |>
+  arrange(desc(Median))
 
-#deskriptives
+deskriptives
 
 # enter your code here ...
 
@@ -155,7 +156,8 @@ a) Um `ggplot` besser zu verstehen wollen wir erste Grafiken nur fuer Deutschlan
 
 ```{r "2_a"}
 
-# enter your code here ...
+deutschland<- eu_makro |>
+  filter(country == "Germany")
 
 ```
 Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
@@ -163,12 +165,12 @@ Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
 b) Nun koennen Sie das Bruttoinlandsprodukt (`gdp`) fuer Deutschland darstellen. Dies sollen Sie mittels eines Streudiagramms machen. Nutzen Sie hierzu den Datensatz `deutschland` und fuegen Sie einen Layer (`geom_point`) hinzu (weitere Layer koennen Sie durch `+` hinzufuegen). Sie sollten die Jahre auf der x-Achse und das Bruttoinlandsprodukt auf der y-Achse darstellen. Speichern Sie ihre Grafik in `g1` ab. Lassen Sie sich danach `g1` ausgeben. Verwenden Sie Pipes fuer ihre Analysen.
 
 ```{r "2_b"}
-#g1 <- ___ |>
-#  ggplot() + geom_point(___(x = ___, y = ___))
+g1 <- ggplot(deutschland) +
+  geom_point(aes(x = year, y = gdp))
 
-#g1
+g1
 
-# enter your code here ...
+ 
 
 ```
 Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
@@ -177,7 +179,17 @@ c) Das Bruttoinlandsprodukt ist ueber die Jahre staendig gestiegen. Wie haben si
 
 ```{r "2_c"}
 
-# enter your code here ...
+g2<- ggplot(deutschland) +
+  geom_point(aes(x = year, y = gdp), color = "steelblue") +
+  geom_line(aes(x = year, y = gov_debt), color ="firebrick") +
+  labs( 
+    title = "Bruttoinlandsprodukt und Schulden Deutschlands über die Jahre",
+    x = "Jahr",
+    y = "Wert (in Mrd. EUR)",
+    color = "Variable"
+    ) +
+  theme_minimal()
+g2
 
 ```
 Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
@@ -187,11 +199,10 @@ Deutschland hatte seit 2010 ein starkes Wirtschaftswachstum, jedoch ist dies mit
 d) Tragen Sie die Schuldenquote `debt_share_country` aller Laender in einem Schaubild ab. Nutzen Sie hierfuer `geom_line`. Damit Sie unterschiedliche Linien fuer jedes Land mittels `geom_line` erhalten, sollten Sie das Argument `group` innerhalb der aes bei `geom_line` verwenden und hier die Variable `country` als Gruppe definieren. Um die einzelnen Linien nach den Laendern unterschiedlich einzufaerben, sollten Sie das Argument `colour` innerhalb der aes von `geom_line` verwenden. Speichern Sie ihre Grafik in `g3` und geben Sie `g3` aus.
 
 ```{r "2_d",optional=TRUE}
-# g3 <- ____ |>
-#   ggplot() + 
-#   geom_line(aes(x = ____, y = ____, group=____, colour=____))
-#
-#g3
+ g3 <- ggplot(eu_makro) +
+   geom_line(aes(x = year, y = debt_share_country, group=country, colour=country))
+
+g3
 
 # enter your code here ...
 
@@ -206,12 +217,12 @@ Die meisten Zeitreihen in ihrem Datensatz starten in 1995. Dies erklaert, warum 
 e) Filtern Sie ihren Datensatz auf die Jahre 1995 und groesser. Da wir uns neben Deutschland besonders fuer Italien interessieren, sollten wir uns eine neue Variable "Laender" definieren, welche nur noch "Deutschland" und "Italien" als Laendernamen enthaelt und fuer alle anderen Namen den Eintrag "Andere" beinhaltet. Nutzen Sie die Funktion `case_when` und testen Sie nach den Laendernamen in `country`. Speichern Sie den neuen Datensatz in `eu_analyse`.
 
 ```{r "2_e"}
-#eu_analyse <- eu_makro |>
-#  filter(___) |>
-#  mutate( Laender = case_when(
-#    country == "___" ~ "Deutschland",
-#    country == "___" ~ "Italien",
-#    TRUE ~ "___"))
+eu_analyse <- eu_makro |>
+  filter(year >= 1995) |>
+  mutate( Laender = case_when(
+    country == "Germany" ~ "Deutschland",
+    country == "Italy" ~ "Italien",
+    TRUE ~ "Andere"))
 
 # enter your code here ...
 
@@ -221,11 +232,11 @@ Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
 f) Nun koennen Sie mit dem Datensatz `eu_analyse` eine neue Grafik erstellen, welche nur noch Deutschland, Italien und Andere Laender anzeigt. Nutzen Sie hierfuer wieder `geom_line` wie im Abschnitt d), nur dieses mal setzen Sie die Farben basierend auf der Variable "Laender". Speichern Sie ihre Grafik in `g4` ab und zeigen Sie anschliessend `g4`.
 
 ```{r "2_f"}
-#g4 <- eu_analyse |>
-#  ggplot() + 
-#  geom_line(aes(x = year, y = debt_share_country, group = ___, colour = ___))
+g4 <- eu_analyse |>
+  ggplot() + 
+  geom_line(aes(x = year, y = debt_share_country, group = Laender, colour = Laender))
 
-#g4
+g4
 
 # enter your code here ...
 
@@ -238,13 +249,13 @@ Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
 g) Nutzen Sie die Grafik `g4` aus der vorherigen Aufgabe und fuegen Sie als Beschriftung fuer die x-Achse "Jahr" und als Beschriftung fuer die y-Achse "Schuldenquote" hinzu. Weiterhin sollte die Legendenueberschrift "Laender" heissen und die einzelnen Linien auch weniger kraeftige Farben erhalten. Nutzen Sie `scale_colour_manual`, um "Andere" die Farbe "grey" zu geben. "Deutschland die Farbe "springgreen4" und "Italien" die Farbe "blue" (in der Reihenfolge). Speichern Sie ihre Grafik als `g5` ab und geben Sie `g5` aus.
 
 ```{r "2_g"}
-#g5 <- g4 + 
-#  ylab("___") + 
-#  xlab("___") +
-#  scale_colour_manual(name = "___", 
-#                      values = c("___", "___", "___"))
-#
-#g5
+g5 <- g4 + 
+  ylab("Schuldenquote") + 
+  xlab("Jahr") +
+  scale_colour_manual(name = "Andere", 
+                      values = c("grey", "springgreen4", "blue"))
+
+g5
 
 # enter your code here ...
 
@@ -257,11 +268,11 @@ Hier waere ein guter Zeitpunkt das Addin 'Check Problemset' auszufuehren!
 h) Um einen Ueberblick zu erhalten, ob die Schuldenquote besonders hoch oder niedrig ist wollen wir noch eine Referenzlinie einbauen. Diese soll bei einer Schuldenquote von 60% liegen, wie im Maastricht-Vertrag festgesetzt. Durch `geom_hline` koennen Sie eine horizontale Linie einfuegen. Faerben Sie diese horizontale Linie rot ein. Weiterhin soll das Schaubild den Titel "Schuldenquote einzelner EU-Laender von 1995 - 2023" erhalten. Speichern Sie ihre fertige Grafik als `final` ab und geben Sie `final` aus.
 
 ```{r "2_h"}
-#final <- g5 +
-#  ___("Schuldenquote einzelner EU-Laender von 1995 - 2023") +
-#  ___(___=0.60, ___ = "red")
+final <- g5 +
+  ggtitle("Schuldenquote einzelner EU-Laender von 1995 - 2023") +
+  geom_hline(yintercept =0.60, color = "red")
 
-#final
+final
 
 # enter your code here ...
 
